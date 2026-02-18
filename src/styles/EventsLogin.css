@@ -259,29 +259,59 @@
   background: rgba(255, 51, 51, 0.4);
 }
 
-/* Tournament Cards - Simple & Clean */
+/* Tournament Cards - Premium Modern Design */
 .tournament-card-login {
-  background: #1a1a1f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 0.875rem;
+  background: linear-gradient(135deg, rgba(30, 30, 35, 0.95), rgba(25, 25, 30, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   display: flex;
-  gap: 0.875rem;
+  gap: 1.25rem;
   align-items: flex-start;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.tournament-card-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42, #ffb347);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .tournament-card-login:hover {
-  background: #212126;
-  border-color: rgba(255, 51, 51, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(35, 35, 40, 0.98), rgba(30, 30, 35, 0.95));
+  border-color: rgba(255, 107, 53, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tournament-card-login:hover::before {
+  opacity: 1;
 }
 
 /* Selected State */
+.tournament-card-login.selected {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(255, 107, 53, 0.12));
+  border: 2px solid #ff6b35;
+  padding: calc(1.5rem - 1px);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3), 0 0 60px rgba(255, 107, 53, 0.15);
+}
+
+.tournament-card-login.selected::before {
+  opacity: 1;
+  height: 4px;
+}/* Selected State */
 .tournament-card-login.selected {
   background: rgba(255, 51, 51, 0.15);
   border: 2px solid #ff3333;
@@ -871,4 +901,259 @@
 .login-subtitle {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
+}
+
+
+/* Tournament Logo - Enhanced */
+.tournament-logo {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.08));
+  border: 1.5px solid rgba(255, 107, 53, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.15);
+}
+
+.tournament-card-login:hover .tournament-logo {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.22), rgba(255, 107, 53, 0.12));
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: 0 6px 24px rgba(255, 107, 53, 0.25);
+}
+
+.tournament-card-login.selected .tournament-logo {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 107, 53, 0.18));
+  border-color: #ff6b35;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Tournament Location - Enhanced */
+.tournament-location {
+  font-size: 0.8rem;
+  color: rgba(255, 107, 53, 0.9);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+/* Tournament Header - Better Typography */
+.tournament-header h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0 0 0.875rem 0;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.tournament-card-login:hover .tournament-header h3 {
+  color: #ff8c42;
+}
+
+.tournament-card-login.selected .tournament-header h3 {
+  color: #ffb347;
+}
+
+/* Tournament Details - Better Spacing */
+.tournament-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.detail-icon {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Selected Badge - Premium */
+.selected-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.5);
+}
+
+/* Login Box - Enhanced */
+.login-box-styled {
+  background: linear-gradient(135deg, rgba(26, 26, 31, 0.98), rgba(20, 20, 25, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 107, 53, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box-styled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42, #ffb347);
+  opacity: 0.9;
+}
+
+/* Login Button - More Premium */
+.login-button {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.login-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff7b45, #ff9c52);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 107, 53, 0.5);
+}
+
+/* Input Fields - Better Contrast */
+.input-group input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.95rem;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 107, 53, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12), 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+
+/* Section Header - Premium Typography */
+.section-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Grid Layout - Better Spacing */
+.tournaments-grid-login {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Login Logo - Enhanced */
+.login-logo-small img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 107, 53, 0.35);
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 107, 53, 0.06));
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+}
+
+/* Login Header - Better Typography */
+.login-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Selected Tournament Info - Enhanced */
+.selected-tournament-info {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.1));
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: rgba(255, 107, 53, 0.9);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+/* Register Link - Enhanced */
+.register-link {
+  background: transparent;
+  border: 1.5px solid rgba(255, 107, 53, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ff8c42;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-link:hover {
+  background: rgba(255, 107, 53, 0.12);
+  border-color: rgba(255, 107, 53, 0.6);
+  color: #ffb347;
+  transform: translateY(-2px);
 }
