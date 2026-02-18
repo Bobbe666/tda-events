@@ -180,8 +180,8 @@
       </div>
     </div>
 
-    <!-- TDA Systems Logo oben rechts -->
-    <div class="tda-corner-badge">
+    <!-- TDA Systems Logo oben rechts - Nur auf Startseite -->
+    <div class="tda-corner-badge" id="cornerBadge" style="display: none;">
       <img src="%PUBLIC_URL%/tda-systems-logo.png" alt="TDA Systems" />
     </div>
     
@@ -191,10 +191,14 @@
       // TDA Intro Animation - NUR auf Startseite "/"
       const currentPath = window.location.pathname;
       const intro = document.getElementById('introOverlay');
+      const cornerBadge = document.getElementById('cornerBadge');
       
       // Nur auf der Startseite (/) anzeigen
       if (currentPath === '/' || currentPath === '/index.html') {
-        // Prüfen ob Intro in dieser Session schon gezeigt wurde
+        // Corner Badge anzeigen
+        cornerBadge.style.display = 'block';
+        
+        // Intro Animation
         const introShown = sessionStorage.getItem('tdaIntroShown');
         
         if (!introShown) {
@@ -217,8 +221,9 @@
           intro.style.display = 'none';
         }
       } else {
-        // Auf allen anderen Seiten verstecken
+        // Auf allen anderen Seiten (/login, /dashboard, etc.) verstecken
         intro.style.display = 'none';
+        cornerBadge.style.display = 'none';
       }
     </script>
   </body>
