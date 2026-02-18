@@ -1,3 +1,6 @@
+/* Cinzel Font for Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap');
+
 /* ==========================================
    MODERN LOGIN PAGE - Enhanced Design 2026
    ========================================== */
@@ -1156,4 +1159,353 @@
   border-color: rgba(255, 107, 53, 0.6);
   color: #ffb347;
   transform: translateY(-2px);
+}
+
+
+/* === HOMEPAGE-INSPIRED PREMIUM STYLES === */
+
+/* Golden Typography */
+.section-header h1 {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 900 !important;
+  margin-bottom: 0.75rem !important;
+  background: linear-gradient(
+    180deg,
+    #fff6cf 0%,
+    #f7d98f 22%,
+    #d9aa43 48%,
+    #8b5a12 76%,
+    #ffd47a 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  text-shadow: 
+    0 0 18px rgba(255,170,60,.18),
+    0 18px 40px rgba(0,0,0,.55) !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: rgba(245, 220, 170, 0.85) !important;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 0 rgba(0,0,0,.65);
+}
+
+/* Tournament Cards - Homepage Style with Gold Border */
+.tournament-card-login {
+  background: linear-gradient(145deg, rgba(20,20,25,0.9), rgba(10,10,12,0.95)) !important;
+  border: 2px solid rgba(255, 215, 0, 0.3) !important;
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  box-shadow:
+    0 0 30px rgba(255, 107, 53, 0.15),
+    0 0 50px rgba(255, 215, 0, 0.08) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.tournament-card-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #ff6b35, #f7931e, #ffd700);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tournament-card-login:hover {
+  border-color: rgba(255, 215, 0, 0.7) !important;
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 40px rgba(255, 107, 53, 0.25),
+    0 0 60px rgba(255, 215, 0, 0.15) !important;
+}
+
+.tournament-card-login:hover::before {
+  opacity: 1;
+}
+
+/* Selected State - Gold Glow */
+.tournament-card-login.selected {
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.12), rgba(255, 107, 53, 0.08)) !important;
+  border: 2px solid #ffd700 !important;
+  padding: calc(1.5rem - 1px);
+  box-shadow: 
+    0 0 40px rgba(255, 215, 0, 0.35),
+    0 0 60px rgba(255, 107, 53, 0.2) !important;
+  animation: goldPulse 2s ease-in-out infinite;
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.35), 0 0 60px rgba(255, 107, 53, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5), 0 0 80px rgba(255, 107, 53, 0.3);
+  }
+}
+
+.tournament-card-login.selected::before {
+  opacity: 1;
+  height: 4px;
+}
+
+/* Tournament Logo - Premium Glow */
+.tournament-logo {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(30,30,35,0.9), rgba(15,15,18,0.95));
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.2),
+    inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.tournament-card-login:hover .tournament-logo {
+  transform: scale(1.05);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow:
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 0 15px rgba(0,0,0,0.4);
+}
+
+.tournament-card-login.selected .tournament-logo {
+  border-color: #ffd700;
+  box-shadow:
+    0 0 35px rgba(255, 215, 0, 0.4),
+    inset 0 0 20px rgba(0,0,0,0.5);
+  animation: logoGlow 2s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.4), inset 0 0 20px rgba(0,0,0,0.5);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 215, 0, 0.6), inset 0 0 25px rgba(0,0,0,0.6);
+  }
+}
+
+/* Tournament Location - Gold Text */
+.tournament-location {
+  font-size: 0.8rem;
+  color: #f7d98f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Tournament Header - Premium Typography */
+.tournament-header h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0 0.875rem 0;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.tournament-card-login:hover .tournament-header h3 {
+  color: #ffd47a;
+}
+
+.tournament-card-login.selected .tournament-header h3 {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Login Box - Homepage Style */
+.login-box-styled {
+  background: linear-gradient(145deg, rgba(20,20,25,0.9), rgba(10,10,12,0.95)) !important;
+  border: 2px solid rgba(255, 215, 0, 0.3) !important;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 0 40px rgba(255, 107, 53, 0.15),
+    0 0 60px rgba(255, 215, 0, 0.1) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box-styled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd700, #ff6b35, #f7931e, #ffd700);
+  opacity: 0.9;
+}
+
+/* Login Header - Golden Typography */
+.login-header h2 {
+  font-family: 'Cinzel', 'Times New Roman', serif !important;
+  font-size: 1.85rem !important;
+  font-weight: 900 !important;
+  margin-bottom: 0.5rem !important;
+  background: linear-gradient(
+    180deg,
+    #fff6cf 0%,
+    #f7d98f 22%,
+    #d9aa43 48%,
+    #8b5a12 76%,
+    #ffd47a 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  text-shadow: 0 0 15px rgba(255,170,60,.15) !important;
+  letter-spacing: 0.02em !important;
+}
+
+.login-header p {
+  color: rgba(245, 220, 170, 0.75) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+}
+
+/* Login Logo - Premium Glow */
+.login-logo-small img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 215, 0, 0.4) !important;
+  padding: 8px;
+  background: linear-gradient(145deg, rgba(30,30,35,0.9), rgba(15,15,18,0.95));
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.25),
+    inset 0 0 10px rgba(0,0,0,0.3) !important;
+}
+
+/* Login Button - Golden Gradient */
+.login-button {
+  background: linear-gradient(135deg, #f7d98f, #d9aa43, #ffd47a) !important;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1f !important;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0.5rem;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.25) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.login-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ffd700, #f7d98f, #ffeb3b) !important;
+  border-color: rgba(255, 215, 0, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4) !important;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Selected Tournament Info - Gold Style */
+.selected-tournament-info {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.08));
+  border: 2px solid rgba(255, 215, 0, 0.35);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #f7d98f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: #ffd700;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Register Link - Gold Border */
+.register-link {
+  background: transparent;
+  border: 2px solid rgba(255, 215, 0, 0.4) !important;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f7d98f !important;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-link:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.7) !important;
+  color: #ffd700 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Selected Badge - Gold */
+.selected-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #ffd700, #f7d98f);
+  color: #1a1a1f;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+  }
 }
