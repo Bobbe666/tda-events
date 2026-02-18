@@ -1,0 +1,93 @@
+/* DivisionEditModal.css */
+
+/* Modal-Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal-Container */
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Überschrift im Modal */
+.modal h2 {
+  margin-top: 0;
+  color: #8B0000;
+}
+
+/* Labels */
+.modal label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input-Felder und Select-Felder – etwas größer */
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Zeile für nebeneinander liegende Felder */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Gruppe für einzelne Felder in der Zeile */
+.form-group {
+  flex: 1;
+}
+
+/* Modal-Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #8B0000;
+  color: #fff;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: #a83232;
+}
+
+.modal-buttons button:last-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #bbb;
+}

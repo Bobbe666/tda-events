@@ -1,0 +1,197 @@
+/* ✅ DivisionCard.css - Ohne CSS-Import (wird in JS importiert) */
+
+.division-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.division-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: #8B0000;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #8B0000;
+}
+
+.card-header h3 {
+  color: #8B0000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ✅ KORRIGIERT: Zentrale Button-Klassen verwenden */
+.card-actions .btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  min-width: auto;
+  height: auto;
+}
+
+.btn-edit {
+  /* Verwendet die zentrale .btn und .btn-secondary Klassen */
+}
+
+.btn-delete {
+  /* Verwendet die zentrale .btn und .btn-danger Klassen */
+}
+
+.card-content {
+  line-height: 1.6;
+}
+
+.view-content p {
+  margin: 8px 0;
+  color: #495057;
+  font-size: 14px;
+}
+
+.view-content p strong {
+  color: #212529;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 100px;
+}
+
+/* ✅ Edit Form Styles */
+.edit-form {
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #8B0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+}
+
+/* ✅ KORRIGIERT: Zentrale Button-Klassen für Form Actions */
+.form-actions .btn {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.btn-save {
+  /* Verwendet zentrale .btn und .btn-primary Klassen */
+}
+
+.btn-cancel {
+  /* Verwendet zentrale .btn und .btn-secondary Klassen */
+}
+
+/* ✅ Loading Overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #8B0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .division-card {
+    padding: 15px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,600 @@
+/* ✅ WettkampferAuswahlModal.css */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content.large {
+  max-width: 1200px;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ✅ Modal Header */
+.modal-header {
+  padding: 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #8B0000 0%, #a52a2a 100%);
+  color: white;
+}
+
+.modal-title h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal-title p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* ✅ Progress Indicator */
+.progress-indicator {
+  padding: 20px 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+  background: #8B0000;
+  color: white;
+}
+
+.progress-step.active .step-label {
+  color: #8B0000;
+  font-weight: 600;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dee2e6;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.progress-line {
+  width: 60px;
+  height: 2px;
+  background: #dee2e6;
+  border-radius: 1px;
+}
+
+/* ✅ Modal Body */
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.step-content h3 {
+  margin: 0 0 10px 0;
+  color: #8B0000;
+  font-size: 1.3rem;
+}
+
+.step-content p {
+  margin: 0 0 20px 0;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+/* ✅ Error Message */
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f5c6cb;
+}
+
+.error-message button {
+  background: none;
+  border: none;
+  color: #721c24;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* ✅ Vereine Grid */
+.vereine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.verein-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verein-card.selectable {
+  cursor: pointer;
+}
+
+.verein-card.selectable:hover {
+  border-color: #8B0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.1);
+}
+
+.verein-card.current {
+  border-color: #28a745;
+  background: #f8fff9;
+}
+
+.verein-info h4 {
+  margin: 0 0 8px 0;
+  color: #8B0000;
+  font-size: 1.1rem;
+}
+
+.verein-info p {
+  margin: 4px 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.select-indicator {
+  font-size: 1.5rem;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.current-verein-info {
+  margin-bottom: 30px;
+}
+
+.current-verein-info h3 {
+  margin-bottom: 15px;
+  color: #28a745;
+}
+
+/* ✅ Wettkämpfer Controls */
+.wettkampfer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #8B0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.selection-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.select-all-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.select-all-button:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* ✅ Wettkämpfer Grid */
+.wettkampfer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.wettkampfer-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.wettkampfer-card:hover {
+  border-color: #8B0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.1);
+}
+
+.wettkampfer-card.selected {
+  border-color: #28a745;
+  background: #f8fff9;
+}
+
+.wettkampfer-checkbox {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.wettkampfer-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #8B0000;
+  cursor: pointer;
+}
+
+.wettkampfer-info {
+  flex: 1;
+}
+
+.wettkampfer-info h4 {
+  margin: 0 0 10px 0;
+  color: #8B0000;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.wettkampfer-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-item {
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #495057;
+  border: 1px solid #e9ecef;
+}
+
+/* ✅ Loading States */
+.loading-spinner-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #8B0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-wettkampfer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+}
+
+.no-wettkampfer button {
+  background: #8B0000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ✅ Modal Footer */
+.modal-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8f9fa;
+}
+
+.btn-secondary, .btn-primary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8B0000 0%, #a52a2a 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a52a2a 0%, #8B0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+}
+
+.btn-primary:disabled, .btn-secondary:disabled {
+  background: #dee2e6;
+  color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+  
+  .modal-header, .modal-body, .modal-footer {
+    padding: 16px 20px;
+  }
+  
+  .progress-indicator {
+    padding: 16px 20px;
+  }
+  
+  .progress-step {
+    gap: 6px;
+  }
+  
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+  
+  .step-label {
+    font-size: 0.8rem;
+  }
+  
+  .progress-line {
+    width: 40px;
+  }
+  
+  .vereine-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .wettkampfer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-height: 300px;
+  }
+  
+  .wettkampfer-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .search-container {
+    max-width: none;
+  }
+  
+  .selection-info {
+    justify-content: space-between;
+  }
+  
+  .modal-footer {
+    flex-direction: column-reverse;
+  }
+  
+  .btn-secondary, .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .wettkampfer-details {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .detail-item {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title h2 {
+    font-size: 1.3rem;
+  }
+  
+  .modal-title p {
+    font-size: 0.9rem;
+  }
+  
+  .wettkampfer-card {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .wettkampfer-info h4 {
+    font-size: 1rem;
+  }
+  
+  .detail-item {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+}
+
+/* ✅ Scrollbar Styling */
+.wettkampfer-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wettkampfer-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.wettkampfer-grid::-webkit-scrollbar-thumb {
+  background: #8B0000;
+  border-radius: 3px;
+}
+
+.wettkampfer-grid::-webkit-scrollbar-thumb:hover {
+  background: #a52a2a;
+}
+
+/* ✅ Animation für Selected State */
+.wettkampfer-card.selected {
+  animation: cardSelect 0.3s ease-out;
+}
+
+@keyframes cardSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

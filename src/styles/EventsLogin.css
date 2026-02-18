@@ -1,0 +1,874 @@
+/* ==========================================
+   MODERN LOGIN PAGE - Enhanced Design 2026
+   ========================================== */
+
+/* Base & Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 51, 51, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Root Page */
+.login-page-new {
+  min-height: 100vh;
+  background: #0a0a0a;
+  background-image:
+    radial-gradient(at 27% 37%, rgba(255, 51, 51, 0.08) 0, transparent 50%),
+    radial-gradient(at 97% 21%, rgba(255, 107, 53, 0.06) 0, transparent 50%),
+    radial-gradient(at 52% 99%, rgba(255, 51, 51, 0.05) 0, transparent 50%),
+    radial-gradient(at 10% 29%, rgba(255, 107, 53, 0.04) 0, transparent 50%);
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.login-page-new::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 31, 0.95) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.login-nav {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 51, 51, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100;
+}
+
+.login-nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid rgba(255, 51, 51, 0.4);
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.15), rgba(255, 107, 53, 0.1));
+  box-shadow: 0 4px 12px rgba(255, 51, 51, 0.2), 0 0 20px rgba(255, 51, 51, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(255, 51, 51, 0.3), 0 0 30px rgba(255, 51, 51, 0.15);
+}
+
+.nav-logo span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ff3333, #ff6b35, #ff8c42);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff3333, #ff6b35);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+  color: #ff6b35;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.login-main {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+  position: relative;
+  z-index: 1;
+}
+
+.login-container-new {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ==========================================
+   TOURNAMENTS SECTION (LEFT)
+   ========================================== */
+
+.tournaments-section-login {
+  background: transparent;
+  padding: 0;
+}
+
+.section-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.section-header p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* Loading & Empty States */
+.loading-state,
+.empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-top-color: #ff3333;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1.25rem;
+}
+
+/* Tournaments Grid - Compact Multi-Column */
+.tournaments-grid-login {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding-right: 0.75rem;
+}
+
+.tournaments-grid-login::-webkit-scrollbar {
+  width: 7px;
+}
+
+.tournaments-grid-login::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.tournaments-grid-login::-webkit-scrollbar-thumb {
+  background: rgba(255, 51, 51, 0.25);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.tournaments-grid-login::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 51, 51, 0.4);
+}
+
+/* Tournament Cards - Simple & Clean */
+.tournament-card-login {
+  background: #1a1a1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tournament-card-login:hover {
+  background: #212126;
+  border-color: rgba(255, 51, 51, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Selected State */
+.tournament-card-login.selected {
+  background: rgba(255, 51, 51, 0.15);
+  border: 2px solid #ff3333;
+  padding: calc(0.875rem - 1px);
+  box-shadow: 0 4px 16px rgba(255, 51, 51, 0.3);
+}
+
+/* Tournament Header - Compact */
+.tournament-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tournament-header h3 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tournament-card-login:hover .tournament-header h3 {
+  color: #ff6b35;
+}
+
+/* Selected Badge - Minimal */
+.selected-badge {
+  background: #ff3333;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  box-shadow: 0 2px 6px rgba(255, 51, 51, 0.4);
+}
+
+/* Event Logo - Compact */
+.tournament-logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.tournament-card-login:hover .tournament-logo {
+  border-color: rgba(255, 51, 51, 0.4);
+}
+
+.tournament-card-login.selected .tournament-logo {
+  border-color: #ff3333;
+  background: rgba(255, 51, 51, 0.1);
+}
+
+/* Tournament Info - Compact */
+.tournament-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.tournament-location {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Tournament Details - Minimal */
+.tournament-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.detail-icon {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* ==========================================
+   LOGIN SECTION (RIGHT)
+   ========================================== */
+
+.login-section-new {
+  position: sticky;
+  top: 100px;
+}
+
+.login-box-styled {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 51, 51, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 10px 30px rgba(255, 51, 51, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box-styled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.4), transparent);
+}
+
+/* Login Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.login-logo-small {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.login-logo-small img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 51, 51, 0.4);
+  padding: 5px;
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.15), rgba(255, 107, 53, 0.1));
+  box-shadow:
+    0 8px 24px rgba(255, 51, 51, 0.2),
+    0 0 40px rgba(255, 51, 51, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-logo-small img:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow:
+    0 12px 32px rgba(255, 51, 51, 0.3),
+    0 0 60px rgba(255, 51, 51, 0.2);
+}
+
+.login-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.login-header p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+/* Selected Tournament Info */
+.selected-tournament-info {
+  background: rgba(255, 51, 51, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 51, 51, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.info-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.info-value {
+  color: #ff6b35;
+  font-weight: 650;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+/* Login Messages */
+.login-message {
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.login-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ff6b6b;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+}
+
+.login-message.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+}
+
+.login-message.info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.input-group input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.01em;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ff3333;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 3px rgba(255, 51, 51, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.input-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Login Button */
+.login-button {
+  background: linear-gradient(135deg, #ff3333, #ff6b35);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 650;
+  font-size: 0.975rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 24px rgba(255, 51, 51, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.login-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 51, 51, 0.35);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(255, 51, 51, 0.3);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Login Footer */
+.login-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.login-footer p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.register-link {
+  background: transparent;
+  border: 1.5px solid rgba(255, 51, 51, 0.4);
+  color: #ff6b35;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-link:hover {
+  background: rgba(255, 51, 51, 0.1);
+  border-color: #ff3333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 51, 51, 0.2);
+}
+
+/* Login Help */
+.login-help {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.login-help p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.login-help p:last-child {
+  margin-bottom: 0;
+}
+
+.login-help strong {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 650;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1200px) {
+  .login-container-new {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .login-section-new {
+    position: static;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .tournaments-grid-login {
+    max-height: 55vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-nav-content {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .login-container-new {
+    padding: 1.5rem;
+  }
+
+  .section-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .login-box-styled {
+    padding: 1.75rem;
+  }
+
+  .tournaments-grid-login {
+    grid-template-columns: 1fr;
+  }
+
+  .tournament-card-login {
+    padding: 0.75rem;
+  }
+
+  .tournament-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .tournament-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .detail-item {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo img {
+    height: 38px;
+    width: 38px;
+  }
+
+  .nav-logo span {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .section-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.925rem;
+  }
+
+  .tournament-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .detail-item {
+    font-size: 0.875rem;
+  }
+
+  .login-logo-small img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-box-styled {
+    padding: 1.5rem;
+  }
+}
+
+/* ==========================================
+   LEGACY LOGIN STYLES (Fallback)
+   ========================================== */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1f 100%);
+  padding: 2rem;
+}
+
+.login-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.login-logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.login-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff3333, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}

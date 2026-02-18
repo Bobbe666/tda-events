@@ -1,0 +1,44 @@
+.wettkaempfer-section {
+  margin-top: 2em;
+}
+
+.wettkaempfer-title {
+  font-size: 1.3em;
+  color: #8b0000;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+  margin-left: 0.2em;
+}
+
+.wettkaempfer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em; /* Abstand zwischen Cards */
+}
+
+.wettkaempfer-card {
+  background: rgba(26, 26, 46, 0.95) !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 1em 1.5em;
+  display: flex;
+  align-items: center;
+  margin: 0;  /* kein äußerer Abstand mehr */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.wettkaempfer-name {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-right: 0.7em;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.geburtsdatum {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98em;
+  margin-left: 3px;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}

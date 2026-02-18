@@ -1,0 +1,133 @@
+/* ==========================
+   Modal-Overlay (Hintergrund)
+   ========================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dunkler, transparenter Hintergrund */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ==========================
+   Modal-Inhalt (Fenster)
+   ========================== */
+.modal-content {
+  background: white;
+  color: #8B0000;
+  padding: 30px;
+  border-radius: 10px;
+  width: 800px;
+  max-width: 95%;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 3px solid #8B0000;
+}
+
+/* ==========================
+   Formular-Styling (Zwei Spalten Layout)
+   ========================== */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-group {
+  width: 48%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #8B0000;
+}
+
+.form-input {
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8B0000;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+}
+
+/* ==========================
+   Button-Container
+   ========================== */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dark-red-button {
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.dark-red-button:hover {
+  background-color: #500000;
+}
+
+/* ==========================
+   Turnierübersicht unter Buttons
+   ========================== */
+.tournament-overview {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.tournament-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tournament-table th,
+.tournament-table td {
+  border: 1px solid #8B0000;
+  padding: 10px;
+  text-align: left;
+}
+
+.tournament-table th {
+  background-color: #8B0000;
+  color: white;
+}
+
+/* ==========================
+   Checkbox-Gruppe für Disziplin
+   ========================== */
+/* Darstellung als Grid mit 3 Spalten */
+.checkbox-group {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 10px !important;
+}
+
+/* Checkbox-Labels: Oben ausrichten */
+.checkbox-label {
+  display: flex !important;
+  align-items: flex-start !important;
+}

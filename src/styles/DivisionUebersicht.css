@@ -1,0 +1,233 @@
+/* ✅ DivisionUebersicht.css - Verbessertes Design */
+
+.division-uebersicht {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.division-uebersicht h1 {
+  color: var(--primary-color, #8B0000);
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* ✅ KORRIGIERTE Filter-Bar - Gleiche Breite, basierend auf längstem Text */
+.filter-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border: 1px solid #dee2e6;
+  overflow-x: auto;
+}
+
+.filter-bar button {
+  background: white;
+  border: 1px solid #8B0000;
+  color: #8B0000;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 120px; /* ✅ Feste Mindestbreite für alle Buttons */
+  max-width: 160px; /* ✅ Maximale Breite begrenzen */
+}
+
+.filter-bar button:hover {
+  background: #8B0000;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(139, 0, 0, 0.2);
+}
+
+.filter-bar button.active {
+  background: #8B0000;
+  color: white;
+  box-shadow: 0 2px 6px rgba(139, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+/* ✅ KORRIGIERTE Sub-Filter-Bar - Gleiche Breite, basierend auf längstem Text */
+.sub-filter-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: linear-gradient(135deg, #fff8f8 0%, #fef2f2 100%);
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.sub-filter-bar button {
+  background: white;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 11px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 100px; /* ✅ Feste Mindestbreite für alle Sub-Filter */
+  max-width: 140px; /* ✅ Maximale Breite begrenzen */
+}
+
+.sub-filter-bar button:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 4px rgba(220, 38, 38, 0.2);
+}
+
+.sub-filter-bar button.active {
+  background: #dc2626;
+  color: white;
+  box-shadow: 0 1px 4px rgba(220, 38, 38, 0.3);
+  font-weight: 600;
+}
+
+/* ✅ Division Cards Layout - Kompakter */
+.division-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* ✅ Keine Ergebnisse */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+  margin-top: 30px;
+}
+
+.no-results p {
+  color: #6c757d;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.show-all-btn {
+  background: #8B0000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.show-all-btn:hover {
+  background: #a52a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+}
+
+/* ✅ Loading States */
+.loading-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #8B0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fee;
+  border-radius: 12px;
+  border: 1px solid #fecaca;
+}
+
+.retry-button {
+  background: #8B0000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: #a52a2a;
+  transform: translateY(-2px);
+}
+
+/* ✅ Responsive Design - Angepasst für kleinere Buttons */
+@media (max-width: 768px) {
+  .filter-bar {
+    padding: 12px;
+    gap: 6px;
+  }
+  
+  .filter-bar button {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-height: 32px;
+  }
+  
+  .sub-filter-bar {
+    padding: 10px;
+    gap: 4px;
+  }
+  
+  .sub-filter-bar button {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-height: 28px;
+  }
+  
+  .division-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .division-uebersicht h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}

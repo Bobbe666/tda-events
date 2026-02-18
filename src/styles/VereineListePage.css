@@ -1,0 +1,816 @@
+/* Vereine List Page - Using Central CSS Variables */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.vereine-page {
+  padding: 0;
+  background: transparent;
+  min-height: auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Header - Using CSS Variables */
+.vereine-page .page-header {
+  text-align: center;
+  margin-bottom: var(--tda-spacing-lg);
+  padding: var(--tda-spacing-md) var(--tda-spacing-lg);
+  background: var(--tda-bg-card-light);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.vereine-page .page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tda-primary), transparent);
+  animation: shimmer 3s;
+}
+
+.vereine-page .page-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--tda-primary);
+  text-shadow: var(--tda-text-glow-red-strong);
+  position: relative;
+  z-index: 2;
+}
+
+.vereine-page .page-header p {
+  font-size: 0.95rem;
+  color: var(--tda-white-70);
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Statistik-Cards - Using CSS Variables */
+.vereine-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--tda-spacing-sm);
+  margin-bottom: var(--tda-spacing-lg);
+}
+
+/* Compact Stats Grid */
+.vereine-page .stats-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: var(--tda-spacing-md);
+}
+
+.vereine-page .stat-card {
+  background: var(--tda-blue) !important;
+  backdrop-filter: var(--tda-blur-medium) !important;
+  border-radius: var(--tda-radius-medium) !important;
+  padding: var(--tda-spacing-sm) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--tda-spacing-sm) !important;
+  border: 1px solid var(--tda-blue-border) !important;
+  box-shadow: var(--tda-shadow-medium) !important;
+  transition: all var(--tda-transition-normal) !important;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Compact Stat Cards */
+.vereine-page .stat-card.compact {
+  padding: 0.5rem !important;
+  gap: 0.3rem !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  min-height: 70px !important;
+  justify-content: center !important;
+}
+
+.vereine-page .stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tda-primary), transparent);
+  animation: shimmer 2s;
+}
+
+.vereine-page .stat-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--tda-shadow-red-hover) !important;
+  border-color: var(--tda-blue-hover) !important;
+}
+
+.vereine-page .stat-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
+  position: relative;
+  z-index: 2;
+}
+
+.vereine-page .stat-card.compact .stat-icon {
+  font-size: 1.3rem;
+}
+
+.vereine-page .stat-content h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+  color: var(--tda-primary);
+  text-shadow: var(--tda-text-glow-red);
+  position: relative;
+  z-index: 2;
+}
+
+.vereine-page .stat-card.compact .stat-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.vereine-page .stat-content p {
+  margin: 0;
+  color: var(--tda-white-80);
+  font-size: 0.85rem;
+  text-shadow: var(--tda-text-glow-subtle);
+  position: relative;
+  z-index: 2;
+}
+
+.vereine-page .stat-card.compact .stat-content p {
+  font-size: 0.7rem;
+}
+
+/* Such- und Filter-Bereich - Using CSS Variables */
+.vereine-page .controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--tda-spacing-lg);
+  gap: var(--tda-spacing-md);
+  flex-wrap: wrap;
+  background: var(--tda-bg-card-light) !important;
+  backdrop-filter: var(--tda-blur-medium) !important;
+  padding: var(--tda-spacing-md);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .search-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+.vereine-page .sort-container {
+  min-width: 200px;
+}
+
+.vereine-page .sort-select {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--tda-radius-medium);
+  font-size: 0.85rem;
+  transition: all var(--tda-transition-normal);
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: var(--tda-blur-medium);
+  color: rgba(255, 51, 51, 0.95) !important;
+  box-shadow: var(--tda-shadow-medium);
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid rgba(255, 51, 51, 0.3) !important;
+}
+
+.vereine-page .sort-select:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 51, 51, 0.5) !important;
+  color: var(--tda-primary) !important;
+}
+
+.vereine-page .sort-select:focus {
+  outline: none !important;
+  border-color: var(--tda-primary) !important;
+  box-shadow: var(--tda-shadow-red) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--tda-primary) !important;
+}
+
+.vereine-page .sort-select option {
+  background: #1a1a1a;
+  color: var(--tda-white);
+  padding: 0.5rem;
+}
+
+.vereine-page .search-input {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid var(--tda-border-primary);
+  border-radius: var(--tda-radius-medium);
+  font-size: 0.95rem;
+  transition: all var(--tda-transition-normal);
+  background: var(--tda-black-40);
+  backdrop-filter: var(--tda-blur-light);
+  color: var(--tda-white);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .search-input::placeholder {
+  color: var(--tda-white-50);
+}
+
+.vereine-page .search-input:focus {
+  outline: none;
+  border-color: var(--tda-primary);
+  box-shadow: var(--tda-shadow-red);
+  background: var(--tda-black-60);
+}
+
+.vereine-page .actions-container {
+  display: flex;
+  gap: var(--tda-spacing-sm);
+}
+
+.vereine-page .action-button {
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: var(--tda-radius-medium);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--tda-transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .action-button.primary {
+  background: var(--tda-gradient-primary) !important;
+  color: var(--tda-white) !important;
+  border: 1px solid var(--tda-border-primary-hover) !important;
+}
+
+.vereine-page .action-button.primary:hover {
+  background: var(--tda-gradient-reverse) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--tda-shadow-red-strong);
+}
+
+.vereine-page .action-button.secondary {
+  background: var(--tda-gray-30) !important;
+  backdrop-filter: var(--tda-blur-light);
+  color: var(--tda-white-80) !important;
+  border: 1px solid var(--tda-gray-50) !important;
+}
+
+.vereine-page .action-button.secondary:hover {
+  background: var(--tda-gray-50) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108, 117, 125, 0.3);
+}
+
+/* Vereine-Grid - Using CSS Variables */
+.vereine-page .vereine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: var(--tda-spacing-md);
+  margin-bottom: var(--tda-spacing-lg);
+}
+
+.vereine-page .verein-card {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto auto !important;
+  background: var(--tda-bg-card);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+  overflow: visible;
+  transition: all var(--tda-transition-normal);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+  padding: var(--tda-spacing-md);
+  gap: var(--tda-spacing-md);
+}
+
+.vereine-page .verein-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tda-primary), transparent);
+  animation: shimmer 3s;
+}
+
+.vereine-page .verein-card.clickable {
+  cursor: pointer;
+}
+
+.vereine-page .verein-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tda-shadow-red-hover);
+  border-color: var(--tda-border-primary-hover);
+}
+
+.vereine-page .verein-card:hover .card-hover-indicator {
+  opacity: 1;
+  transform: translateY(-50%) translateY(0);
+}
+
+/* Card Header - Using CSS Variables */
+.vereine-page .verein-card-header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.vereine-page .verein-title h3 {
+  margin: 0 0 0.3rem 0;
+  color: var(--tda-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: var(--tda-text-glow-red);
+}
+
+.vereine-page .verein-id {
+  font-size: 0.8rem;
+  color: var(--tda-white-50);
+  font-weight: 500;
+}
+
+.vereine-page .status-badge {
+  display: none !important;
+}
+
+.vereine-page .status-badge.admin {
+  display: none !important;
+}
+
+.vereine-page .status-badge.verein {
+  display: none !important;
+}
+
+/* Card Body - Using CSS Variables */
+.vereine-page .verein-card-body {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.vereine-page .verein-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.vereine-page .info-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.9rem !important;
+  padding: 0.5rem 0 !important;
+  color: var(--tda-white-80) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.vereine-page .info-icon {
+  font-size: 1.1rem !important;
+  width: 24px !important;
+  text-align: center !important;
+  filter: drop-shadow(0 0 5px rgba(255, 51, 51, 0.3)) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.vereine-page .info-text {
+  font-size: 0.9rem !important;
+  color: var(--tda-white-80) !important;
+  flex: 1 !important;
+  background: transparent !important;
+}
+
+/* Card Footer - Using CSS Variables */
+.vereine-page .verein-card-footer {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  padding: var(--tda-spacing-md) 0 0 0;
+  background: transparent;
+  border-top: 1px solid var(--tda-border-primary);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-top: var(--tda-spacing-sm);
+}
+
+.vereine-page .card-action-button {
+  padding: 0.7rem 0.8rem;
+  border: none;
+  border-radius: var(--tda-radius-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--tda-transition-normal);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.vereine-page .card-action-button.primary {
+  background: var(--tda-gradient-primary) !important;
+  color: var(--tda-white) !important;
+  border: 1px solid var(--tda-border-primary-hover) !important;
+}
+
+.vereine-page .card-action-button.primary:hover {
+  background: var(--tda-gradient-reverse) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--tda-shadow-red-strong);
+}
+
+.vereine-page .card-action-button.secondary {
+  background: var(--tda-gray-30) !important;
+  color: var(--tda-white-80) !important;
+  border: 1px solid var(--tda-gray-50) !important;
+  backdrop-filter: var(--tda-blur-light);
+}
+
+.vereine-page .card-action-button.secondary:hover {
+  background: var(--tda-gray-50) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 117, 125, 0.3);
+}
+
+.vereine-page .card-action-button.archive {
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.3), rgba(73, 80, 87, 0.3)) !important;
+  color: var(--tda-white-90) !important;
+  border: 1px solid rgba(108, 117, 125, 0.5) !important;
+  backdrop-filter: var(--tda-blur-light);
+}
+
+.vereine-page .card-action-button.archive:hover {
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.5), rgba(73, 80, 87, 0.5)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+.vereine-page .card-action-button.danger {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.3), rgba(176, 42, 55, 0.3)) !important;
+  color: #ff6b6b !important;
+  border: 1px solid rgba(220, 53, 69, 0.5) !important;
+  backdrop-filter: var(--tda-blur-light);
+}
+
+.vereine-page .card-action-button.danger:hover {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.5), rgba(176, 42, 55, 0.5)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.5);
+  color: #ff8888 !important;
+}
+
+.vereine-page .card-action-button.restore {
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.3), rgba(32, 134, 55, 0.3)) !important;
+  color: #6bff6b !important;
+  border: 1px solid rgba(40, 167, 69, 0.5) !important;
+  backdrop-filter: var(--tda-blur-light);
+}
+
+.vereine-page .card-action-button.restore:hover {
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.5), rgba(32, 134, 55, 0.5)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5);
+  color: #88ff88 !important;
+}
+
+/* Hover-Indikator - Using CSS Variables */
+.vereine-page .card-hover-indicator {
+  position: absolute !important;
+  top: 50% !important;
+  right: var(--tda-spacing-md) !important;
+  background: rgba(255, 51, 51, 0.9) !important;
+  backdrop-filter: var(--tda-blur-light) !important;
+  color: var(--tda-white) !important;
+  padding: 0.6rem 1rem !important;
+  border-radius: var(--tda-radius-small) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  opacity: 0 !important;
+  transform: translateY(-50%) translateY(10px) !important;
+  transition: all var(--tda-transition-normal) !important;
+  pointer-events: none !important;
+  border: 1px solid var(--tda-border-primary-hover) !important;
+  box-shadow: var(--tda-shadow-medium) !important;
+  z-index: 10 !important;
+}
+
+/* Keine Ergebnisse - Using CSS Variables */
+.vereine-page .no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--tda-bg-card);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+  margin-bottom: var(--tda-spacing-lg);
+}
+
+.vereine-page .no-results-content h3 {
+  color: var(--tda-primary);
+  font-size: 1.6rem;
+  margin-bottom: var(--tda-spacing-sm);
+  text-shadow: var(--tda-text-glow-red-strong);
+}
+
+.vereine-page .no-results-content p {
+  color: var(--tda-white-70);
+  font-size: 1rem;
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+
+.vereine-page .clear-search-button {
+  background: var(--tda-gradient-primary);
+  color: var(--tda-white);
+  border: 1px solid var(--tda-border-primary-hover);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--tda-radius-small);
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: var(--tda-spacing-md);
+  transition: all var(--tda-transition-normal);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .clear-search-button:hover {
+  background: var(--tda-gradient-reverse);
+  transform: translateY(-2px);
+  box-shadow: var(--tda-shadow-red-strong);
+}
+
+/* Loading und Error States - Using CSS Variables */
+.vereine-page .loading-container,
+.vereine-page .error-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--tda-bg-card);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+}
+
+.vereine-page .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--tda-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--tda-spacing-md);
+  filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
+}
+
+.vereine-page .loading-container p {
+  color: var(--tda-white-80);
+  font-size: 1rem;
+}
+
+.vereine-page .error-container h2 {
+  color: var(--tda-primary);
+  margin-bottom: var(--tda-spacing-sm);
+  text-shadow: var(--tda-text-glow-red-strong);
+}
+
+.vereine-page .error-container p {
+  color: var(--tda-white-70);
+  margin-bottom: var(--tda-spacing-md);
+}
+
+.vereine-page .retry-button {
+  background: var(--tda-gradient-primary);
+  color: var(--tda-white);
+  border: 1px solid var(--tda-border-primary-hover);
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--tda-radius-medium);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--tda-transition-normal);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .retry-button:hover {
+  background: var(--tda-gradient-reverse);
+  transform: translateY(-2px);
+  box-shadow: var(--tda-shadow-red-strong);
+}
+
+/* Alphabetische Filter-Buttons im Controls-Section */
+.vereine-page .letter-filter-container {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.vereine-page .letter-filter-btn {
+  min-width: 40px;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+  border-radius: var(--tda-radius-small);
+  background: rgba(52, 58, 64, 0.4);
+  backdrop-filter: var(--tda-blur-light);
+  color: var(--tda-white-80);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--tda-transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.vereine-page .letter-filter-btn:hover {
+  background: rgba(108, 117, 125, 0.5);
+  border-color: rgba(108, 117, 125, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+  color: var(--tda-white);
+}
+
+.vereine-page .letter-filter-btn.active {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.8), rgba(176, 42, 55, 0.8));
+  border-color: rgba(220, 53, 69, 0.9);
+  color: var(--tda-white);
+  box-shadow: 0 4px 16px rgba(220, 53, 69, 0.5);
+  transform: translateY(-2px);
+}
+
+.vereine-page .letter-filter-btn.active:hover {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.9), rgba(176, 42, 55, 0.9));
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+}
+
+/* Footer - Using CSS Variables */
+.vereine-page .page-footer {
+  text-align: center;
+  padding: var(--tda-spacing-md);
+  color: var(--tda-white-50);
+  font-size: 0.9rem;
+  margin-top: var(--tda-spacing-lg);
+}
+
+/* Archived Section Header */
+.vereine-page .archived-section-header {
+  text-align: center;
+  margin: 3rem 0 var(--tda-spacing-lg) 0;
+  padding: var(--tda-spacing-lg);
+  background: rgba(108, 117, 125, 0.15);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid rgba(108, 117, 125, 0.3);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.vereine-page .archived-section-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: rgba(108, 117, 125, 1);
+  text-shadow: 0 0 20px rgba(108, 117, 125, 0.5);
+}
+
+.vereine-page .archived-section-header p {
+  font-size: 0.95rem;
+  color: var(--tda-white-70);
+  margin: 0;
+}
+
+/* Archived Cards */
+.vereine-page .verein-card.archived-card {
+  border: 1px solid rgba(108, 117, 125, 0.4);
+  background: rgba(108, 117, 125, 0.1);
+  opacity: 0.85;
+}
+
+.vereine-page .verein-card.archived-card:hover {
+  opacity: 1;
+  border-color: rgba(108, 117, 125, 0.6);
+  box-shadow: 0 8px 32px rgba(108, 117, 125, 0.3);
+}
+
+.vereine-page .verein-card.archived-card .verein-title h3 {
+  color: rgba(108, 117, 125, 1);
+  text-shadow: 0 0 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vereine-page {
+    padding: 0;
+  }
+
+  .page-header {
+    padding: 1.2rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-container {
+    max-width: none;
+  }
+
+  .actions-container {
+    justify-content: center;
+  }
+
+  .vereine-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .verein-card-footer {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--tda-spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .page-header p {
+    font-size: 0.85rem;
+  }
+
+  .verein-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .verein-title h3 {
+    font-size: 1.1rem;
+  }
+
+  .stat-content h3 {
+    font-size: 1.5rem;
+  }
+}

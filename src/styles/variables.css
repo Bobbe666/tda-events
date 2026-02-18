@@ -1,0 +1,237 @@
+/* ============================================
+   TDA INTERNATIONAL - ZENTRALE FARBVERWALTUNG
+   ============================================ */
+
+:root {
+  /* Haupt-Farbpalette - Neues helles Rot Design */
+  --tda-primary: #ff3333;              /* Helles Rot - Hauptfarbe */
+  --tda-primary-dark: #cc0000;         /* Dunkler für Hover */
+  --tda-primary-darker: #990000;       /* Sehr dunkel für Active */
+  --tda-primary-light: #ff4444;        /* Heller für Highlights */
+  --tda-primary-lighter: #ff6666;      /* Noch heller für Akzente */
+
+  /* Sekundäre Farben */
+  --tda-secondary: #dd0000;            /* Mittleres Rot */
+  --tda-secondary-dark: #bb0000;       /* Dunkler für Hover */
+
+  /* Gradient-Definitionen */
+  --tda-gradient-primary: linear-gradient(135deg, #ff3333, #cc0000);
+  --tda-gradient-dark: linear-gradient(135deg, #cc0000, #990000);
+  --tda-gradient-reverse: linear-gradient(135deg, #cc0000, #ff3333);
+
+  /* Dashboard-spezifische Farben */
+  --tda-bg-dark: #000000;              /* Schwarzer Hintergrund */
+  --tda-bg-card: rgba(0, 0, 0, 0.6);   /* Dunkle Cards mit Transparenz */
+  --tda-bg-card-light: rgba(255, 255, 255, 0.03); /* Leicht heller */
+  --tda-border-primary: rgba(255, 51, 51, 0.2);   /* Rote Border */
+  --tda-border-primary-hover: rgba(255, 51, 51, 0.5); /* Hover Border */
+
+  /* Blaue Akzentfarben (für Stat-Cards etc.) */
+  --tda-blue: rgba(59, 130, 246, 0.15);
+  --tda-blue-border: rgba(59, 130, 246, 0.3);
+  --tda-blue-hover: rgba(59, 130, 246, 0.5);
+
+  /* Neutrale Farben */
+  --tda-white: #ffffff;
+  --tda-white-80: rgba(255, 255, 255, 0.8);
+  --tda-white-70: rgba(255, 255, 255, 0.7);
+  --tda-white-50: rgba(255, 255, 255, 0.5);
+  --tda-light-gray: #f8f9fa;
+  --tda-gray: #6c757d;
+  --tda-gray-30: rgba(108, 117, 125, 0.3);
+  --tda-gray-50: rgba(108, 117, 125, 0.5);
+  --tda-dark-gray: #343a40;
+  --tda-black: #000000;
+  --tda-black-40: rgba(0, 0, 0, 0.4);
+  --tda-black-60: rgba(0, 0, 0, 0.6);
+
+  /* Status-Farben */
+  --tda-success: #28a745;
+  --tda-success-light: rgba(40, 167, 69, 0.2);
+  --tda-success-border: rgba(40, 167, 69, 0.3);
+  --tda-warning: #ffc107;
+  --tda-warning-light: rgba(255, 193, 7, 0.2);
+  --tda-warning-border: rgba(255, 193, 7, 0.3);
+  --tda-danger: #dc3545;
+  --tda-danger-light: #f8d7da;
+  --tda-info: #17a2b8;
+  --tda-info-light: #d1ecf1;
+
+  /* Schatten - Mit rotem Glow */
+  --tda-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --tda-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --tda-shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --tda-shadow-red: 0 0 20px rgba(255, 51, 51, 0.4);
+  --tda-shadow-red-strong: 0 8px 24px rgba(255, 51, 51, 0.4);
+  --tda-shadow-red-hover: 0 15px 40px rgba(255, 51, 51, 0.3);
+
+  /* Text Shadows */
+  --tda-text-glow-red: 0 0 10px rgba(255, 51, 51, 0.8);
+  --tda-text-glow-red-strong: 0 0 20px rgba(255, 51, 51, 0.6);
+  --tda-text-glow-subtle: 0 0 5px rgba(255, 51, 51, 0.2);
+
+  /* Übergänge */
+  --tda-transition-fast: 0.2s ease;
+  --tda-transition-normal: 0.3s ease;
+  --tda-transition-slow: 0.5s ease;
+
+  /* Border Radius */
+  --tda-radius-small: 8px;
+  --tda-radius-medium: 12px;
+  --tda-radius-large: 16px;
+  --tda-radius-xl: 20px;
+
+  /* Spacing */
+  --tda-spacing-xs: 0.5rem;
+  --tda-spacing-sm: 1rem;
+  --tda-spacing-md: 1.5rem;
+  --tda-spacing-lg: 2rem;
+  --tda-spacing-xl: 3rem;
+
+  /* Backdrop Blur */
+  --tda-blur-light: blur(10px);
+  --tda-blur-medium: blur(20px);
+  --tda-blur-heavy: blur(30px);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Hintergründe */
+.tda-bg-primary {
+  background: var(--tda-gradient-primary) !important;
+}
+.tda-bg-dark {
+  background-color: var(--tda-bg-dark) !important;
+}
+.tda-bg-card {
+  background-color: var(--tda-bg-card) !important;
+  backdrop-filter: var(--tda-blur-medium);
+}
+
+/* Text Farben */
+.tda-text-primary {
+  color: var(--tda-primary) !important;
+}
+.tda-text-white {
+  color: var(--tda-white) !important;
+}
+.tda-text-white-80 {
+  color: var(--tda-white-80) !important;
+}
+.tda-text-glow {
+  text-shadow: var(--tda-text-glow-red) !important;
+}
+
+/* Schatten */
+.tda-shadow-light {
+  box-shadow: var(--tda-shadow-light) !important;
+}
+.tda-shadow-medium {
+  box-shadow: var(--tda-shadow-medium) !important;
+}
+.tda-shadow-red {
+  box-shadow: var(--tda-shadow-red) !important;
+}
+
+/* Border */
+.tda-border-primary {
+  border: 1px solid var(--tda-border-primary) !important;
+}
+.tda-border-radius-md {
+  border-radius: var(--tda-radius-medium) !important;
+}
+.tda-border-radius-lg {
+  border-radius: var(--tda-radius-large) !important;
+}
+
+/* ============================================
+   COMMON COMPONENT STYLES
+   ============================================ */
+
+/* Card Styles */
+.tda-card {
+  background: var(--tda-bg-card);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-large);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+  padding: var(--tda-spacing-md);
+  transition: all var(--tda-transition-normal);
+}
+
+.tda-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tda-shadow-red-hover);
+  border-color: var(--tda-border-primary-hover);
+}
+
+/* Button Styles */
+.tda-button {
+  background: var(--tda-gradient-primary);
+  color: var(--tda-white);
+  border: 1px solid var(--tda-border-primary-hover);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--tda-radius-medium);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--tda-transition-normal);
+  box-shadow: var(--tda-shadow-medium);
+}
+
+.tda-button:hover {
+  background: var(--tda-gradient-reverse);
+  transform: translateY(-2px);
+  box-shadow: var(--tda-shadow-red-strong);
+}
+
+.tda-button-secondary {
+  background: var(--tda-gray-30);
+  backdrop-filter: var(--tda-blur-light);
+  color: var(--tda-white-80);
+  border: 1px solid var(--tda-gray-50);
+}
+
+.tda-button-secondary:hover {
+  background: var(--tda-gray-50);
+}
+
+/* Input Styles */
+.tda-input {
+  background: var(--tda-black-40);
+  backdrop-filter: var(--tda-blur-light);
+  border: 1px solid var(--tda-border-primary);
+  border-radius: var(--tda-radius-medium);
+  padding: 0.75rem 1rem;
+  color: var(--tda-white);
+  transition: all var(--tda-transition-normal);
+}
+
+.tda-input::placeholder {
+  color: var(--tda-white-50);
+}
+
+.tda-input:focus {
+  outline: none;
+  border-color: var(--tda-primary);
+  box-shadow: var(--tda-shadow-red);
+  background: var(--tda-black-60);
+}
+
+/* Header Styles */
+.tda-header {
+  background: var(--tda-black-60);
+  backdrop-filter: var(--tda-blur-medium);
+  border-radius: var(--tda-radius-xl);
+  border: 1px solid var(--tda-border-primary);
+  box-shadow: var(--tda-shadow-heavy);
+  padding: var(--tda-spacing-md);
+  margin-bottom: var(--tda-spacing-lg);
+}
+
+.tda-header h1 {
+  color: var(--tda-primary);
+  text-shadow: var(--tda-text-glow-red-strong);
+  margin: 0;
+}

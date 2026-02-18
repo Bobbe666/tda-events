@@ -1,0 +1,93 @@
+/* ==========================
+   Modal-Overlay (Hintergrund)
+   ========================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dunkler, transparenter Hintergrund */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ==========================
+   Modal-Inhalt (Fenster) – breiter reduziert
+   ========================== */
+.modal-content {
+  background: white; /* Hintergrundfarbe weiß */
+  color: #8B0000; /* Dunkles Rot für Schrift */
+  padding: 30px;
+  border-radius: 10px;
+  width: 450px; /* Breite reduziert */
+  max-width: 95%;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 3px solid #8B0000; /* Dunkler roter Rand */
+}
+
+/* ==========================
+   Formular-Styling (ähnlich wie in TurnierBearbeiten.css)
+   ========================== */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px; /* Abstand zwischen den Gruppen vergrößert */
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #8B0000; /* Dunkles Rot für Labels */
+}
+
+.form-input {
+  margin-bottom: 25px; /* Abstand zum nächsten Element vergrößert */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8B0000; /* Dunkelroter Rand */
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+}
+
+/* ==========================
+   Button-Container
+   ========================== */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dark-red-button {
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.dark-red-button:hover {
+  background-color: #500000;
+}
+
+/* ==========================
+   Checkbox-Gruppe (falls benötigt im Formular)
+   ========================== */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+}

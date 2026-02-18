@@ -1,0 +1,131 @@
+/* === TABELLEN === */
+.table-container {
+  overflow-x: auto;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.table th {
+  background-color: var(--gray-50);
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-size-xs);
+}
+
+.table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+/* Tabellen-Varianten */
+.table-striped tbody tr:nth-child(even) {
+  background-color: var(--gray-50);
+}
+
+.table-compact th,
+.table-compact td {
+  padding: var(--space-2) var(--space-3);
+}
+
+/* Spezielle Spalten */
+.table .col-actions {
+  width: 120px;
+  text-align: center;
+}
+
+.table .col-status {
+  width: 100px;
+  text-align: center;
+}
+
+.table .col-number {
+  width: 80px;
+  text-align: right;
+}
+
+/* Turnier-spezifische Tabellen */
+.participants-table {
+  margin-top: var(--space-6);
+}
+
+.participants-table .fighter-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-800);
+}
+
+.participants-table .club-name {
+  color: var(--gray-600);
+  font-size: var(--font-size-xs);
+}
+
+.participants-table .weight-class {
+  background-color: var(--primary-gold);
+  color: var(--white);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+/* === RESPONSIVE TABELLEN === */
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .table-stack {
+    border: 0;
+  }
+  
+  .table-stack thead {
+    display: none;
+  }
+  
+  .table-stack tr {
+    display: block;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    background-color: var(--white);
+  }
+  
+  .table-stack td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--gray-200);
+    padding: var(--space-3);
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  
+  .table-stack td:before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: var(--space-3);
+    width: 45%;
+    padding-right: var(--space-2);
+    white-space: nowrap;
+    text-align: left;
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-600);
+  }
+}
