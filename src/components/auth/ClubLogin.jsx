@@ -126,8 +126,9 @@ function ClubLogin({ onLogin }) {
             <span>TDA Tournament Center</span>
           </div>
           <div className="nav-links">
-            <a href="https://tda-intl.org">Home</a>
-            <a href="https://tda-intl.org/kontakt">Kontakt</a>
+            <a href="https://events.tda-intl.org">Home</a>
+            <a href="https://tda-intl.org">TDA System</a>
+            <a href="https://events.tda-intl.org/kontakt">Kontakt</a>
           </div>
         </div>
       </nav>
